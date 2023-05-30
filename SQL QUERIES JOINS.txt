@@ -1,0 +1,16 @@
+select * from customers;
+
+select * from company_orders;
+
+SELECT customers.first_name, customers.last_name, company_orders.date,
+company_orders.total_amount FROM customers INNER JOIN company_orders ON
+customers.id=company_orders.customer_id;
+
+SELECT customers.first_name, customers.last_name, company_orders.date,
+company_orders.total_amount FROM customers LEFT JOIN company_orders ON
+customers.id=company_orders.customer_id;
+
+
+SELECT suppliers.company_name, suppliers.contact_name, suppliers.phone, company_products.name 
+FROM company_products INNER JOIN suppliers ON company_products.supplier_id = suppliers.id AND 
+company_products.is_discontinued= 0;
